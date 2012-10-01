@@ -1,0 +1,32 @@
+<html><head> <title> Car Racing</title>
+<style type="text/css">
+@import url("mainstyle.css");
+
+</style>
+<script type="text/javascript" src="GameControl.js"></script>
+</head>
+<body>
+<div>
+<form>
+
+</form>
+<button id="btnStart" onclick="startGame()">Start Game</button> <button disabled="true" id="btnPause" onclick="pause()">Pause </button>
+<table id="road" border="4">
+<tr ><td id="10" onclick="setMove(10)"> Empty</td><td id="20" onclick="setMove(20)">Empty </td><td id="30" onclick="setMove(30)"> Empty</td></tr>
+<tr><td id="11" onclick="setMove(11)">Empty </td><td id="21" onclick="setMove(21)">Empty </td><td id="31" onclick="setMove(31)"> Empty</td></tr>
+<tr><td id="12" onclick="setMove(12)"> Empty</td><td id="22" onclick="setMove(22)">Empty </td><td id="32" onclick="setMove(32)">Empty </td></tr>
+
+</table>
+<div id="timer"> </div>
+<div id="err" style="color:red"> </div>
+<table>
+<tr>                                                                                                           
+<td><button disabled="true" onclick="setCoords('X');shuffleDisable();" id="btnX">X </button></td>
+<td><button disabled="true"  onclick="setCoords('O');shuffleDisable();" id="btnO">O </button></td>
+</tr>
+</table> 
+
+
+
+</body>
+</html>
