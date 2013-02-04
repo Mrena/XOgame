@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+        xmlns:rim="http://www.blackberry.com/ns/widgets"
+        version="2.0.0.0" id="printP">
+ 
+  <author href="http://www.mrena.co.za/"
+          rim:copyright="Copyright 2012-2013 Mrena Systems">Mrena Systems</author>
+ 
+  <name>PrintP</name>
+ 
+  <description>
+    With PrintP you can upload a picture of yourself or anything else you want printed out, from any device which has uploading capabilities and have your picture delivered to your door step, in the next business day. The best part is you pay on delivery.
+  </description>
+ 
+  <icon src="images/icons/icon-150.png"/>
+ 
+  <rim:splash src="images/splash-1280x768.png"/>
+  <rim:splash src="images/splash-768x1280.png"/>
+ 
+  <content src="index.html" rim:allowInvokeParams="true"/>
+ 
+  <feature id="blackberry.ui.dialog"/>
+   
+  <feature id="blackberry.app">
+    <param name="mode" value="portrait" />
+  </feature>
+ 
+  <feature id="blackberry.app">
+    <param name="backgroundColor" value="0xFFFF0000" />
+  </feature>
+ 
+  <access uri="*" subdomains="true"></access>
+ 
+  <license href="http://www.mrena.co.za/licence.txt"/>
+ 
+</widget>

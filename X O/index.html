@@ -1,32 +1,86 @@
-<html><head> <title> Car Racing</title>
-<style type="text/css">
-@import url("mainstyle.css");
+<html><head> <title>X O</title>
+<link rel="stylesheet" href="css/mainstyle.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.2.0.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/GameControl.js"></script>
+    <script src="js/jquery.mobile-1.2.0.js"></script>
+    <script>
+        $(document).bind("mobileinit", function () {
+            $.mobile.allowCrossDomainPages = true;
+            $.support.cors = true;
+        });
 
-</style>
-<script type="text/javascript" src="GameControl.js"></script>
+        $("#pop").hide();
+
+        $("#btnStart").bind("vclick", function (event,ui) {
+            startGame();
+            alert("hello");
+        });
+        $("#btnPause").bind("vclick", function (event,ui) {
+            pause();
+        });
+        $("#btnX").bind("vclick", function (event,ui) {
+            setCoords('X');
+        });
+
+        $("#btnO").bind("vclick", function (event,ui) {
+            setCoords('O');
+        });
+    </script> 
+   
 </head>
-<body>
-<div>
-<form>
-
-</form>
-<button id="btnStart" onclick="startGame()">Start Game</button> <button disabled="true" id="btnPause" onclick="pause()">Pause </button>
-<table id="road" border="4">
-<tr ><td id="10" onclick="setMove(10)"> Empty</td><td id="20" onclick="setMove(20)">Empty </td><td id="30" onclick="setMove(30)"> Empty</td></tr>
-<tr><td id="11" onclick="setMove(11)">Empty </td><td id="21" onclick="setMove(21)">Empty </td><td id="31" onclick="setMove(31)"> Empty</td></tr>
-<tr><td id="12" onclick="setMove(12)"> Empty</td><td id="22" onclick="setMove(22)">Empty </td><td id="32" onclick="setMove(32)">Empty </td></tr>
+<body onload="init()">
+<div data-role="page" data-theme="a">
+    <div data-role="header" data-position="fixed" data-theme="c"> 
+    <header>X O</header>
+        </div>
+    <div data-role="content">
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+<button data-role="none" id="btnStart" data-theme="b" onclick="startGame();">Start Game</button></div><div class="ui-block-b"><button data-role="none" data-theme="b" class="ui-state-disabled" id="btnPause" onclick="pause();">Pause </button>
+</div>
+</div>
+<table id="road" border="1" class="ui-corner-all"  align="center">
+<tr ><td id="10" onclick="setMove(10)"><img src="images/mazes.jpg" alt="board" /></td><td id="20" onclick="setMove(20)"><img src="images/mazes.jpg" alt="board" /></td><td id="30" onclick="setMove(30)"><img src="images/mazes.jpg" alt="board" /></td></tr>
+<tr><td id="11" onclick="setMove(11)"><img src="images/mazes.jpg" alt="board" /></td><td id="21" onclick="setMove(21)"><img src="images/mazes.jpg" alt="board" /></td><td id="31" onclick="setMove(31)"><img src="images/mazes.jpg" alt="board" /></td></tr>
+<tr><td id="12" onclick="setMove(12)"><img src="images/mazes.jpg" alt="board" /></td><td id="22" onclick="setMove(22)"><img src="images/mazes.jpg" alt="board" /></td><td id="32" onclick="setMove(32)"><img src="images/mazes.jpg" alt="board" /></td></tr>
 
 </table>
-<div id="timer"> </div>
+<div id="timer" align="center"> </div>
 <div id="err" style="color:red"> </div>
-<table>
+<table align="center">
 <tr>                                                                                                           
-<td><button disabled="true" onclick="setCoords('X');shuffleDisable();" id="btnX">X </button></td>
-<td><button disabled="true"  onclick="setCoords('O');shuffleDisable();" id="btnO">O </button></td>
+<td><button data-role="none" data-theme="b" class="ui-state-disabled" onclick="setCoords('X');" id="btnX">X </button></td>
+<td><button data-role="none" data-theme="b" class="ui-state-disabled" onclick="setCoords('O');" id="btnO">O </button></td>
 </tr>
 </table> 
+       
+        </div>
+    
+    <div id="pop"></div>
+    <div data-role="collapsible">
+    <h3>Instructions</h3>
+        <p>In X O the objective is to get a sequencial row of three of the symbol you are playing with. The row may be horizontally, vertically, or diagonally. </p>
+    </div>
+    <div data-role="collapsible">
+    <h3>About</h3>
+        <p>Name : X O<br />Version : 1.0<br />Developer : Khulekani Ngongoma</p>
+    </div>
+    
+    
+    <div  data-role="footer" data-position="fixed" data-theme="c" >
+        <footer>Developed Khulekani Ngongoma</footer>
+    </div>
+    </div>
+    
+    <script>
 
 
+
+       
+
+    </script>
 
 </body>
 </html>
